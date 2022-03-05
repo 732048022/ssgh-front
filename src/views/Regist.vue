@@ -129,10 +129,11 @@ export default {
               if (response.data.code == 200) {
                 console.log(response.data.data)
                 this.$message({
-                  message: `${response.data.data.uname}注册成功！`,
+                  message: `${response.data.data}注册成功！`,
                   type: "success",
                 });
-                sessionStorage.setItem("token", response.data.data.token);
+                
+                //sessionStorage.setItem("token", response.data.data.token);
                 this.$router.push("/login");
               } else if (response.data.code == 447) {
                 this.$message({
