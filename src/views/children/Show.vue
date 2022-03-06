@@ -16,10 +16,10 @@
             <el-carousel-item v-for="pic in data.foodpics" :key="pic">
               <el-image
                 style="height: 200px"
-                :src="'http://127.0.0.1:8080/book' + pic.savepath"
+                :src="'http://127.0.0.1:8080' + pic.savepath"
                 fit="contain"
                 :preview-src-list="[
-                  'http://127.0.0.1:8080/book' + pic.savepath,
+                  'http://127.0.0.1:8080' + pic.savepath,
                 ]"
               ></el-image>
             </el-carousel-item>
@@ -106,7 +106,7 @@
         <div>
           <el-upload
             class="upload-demo"
-            action="http://localhost:8080/book/food/addPic"
+            action="http://localhost:8080/food/addPic"
             :on-preview="handlePreview"
             :on-success="success"
             :limit="1"
@@ -262,7 +262,7 @@ export default {
         .then((response) => {
           if (response.data.code == 200) {
             //console.log(response.data.data)
-            this.url = "http://127.0.0.1:8080/book" + response.data.data;
+            this.url = "http://127.0.0.1:8080" + response.data.data;
           }
         });
     },

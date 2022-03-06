@@ -11,7 +11,7 @@ import echarts from 'echarts'
 
 
 Vue.use(elementUI)
-axios.defaults.baseURL='http://localhost:8081/ssm-union'
+axios.defaults.baseURL='http://localhost:8080'
 Vue.prototype.$http =axios
 Vue.prototype.$qs = qs
 Vue.prototype.$echarts = echarts

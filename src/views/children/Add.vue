@@ -44,7 +44,7 @@
       <div>
         <el-upload
           class="upload-demo"
-          action="http://localhost:8080/book/food/addPic"
+          action="http://localhost:8080/food/addPic"
           :on-preview="handlePreview"
           :on-remove="handleRemove"
           :file-list="fileList"
@@ -128,6 +128,9 @@ export default {
         info: "",
         kindid: "",
       },
+      // total: "",
+      // pageNumber: 1,
+      // pageSize: 8,
     };
   },
   methods: {
@@ -158,12 +161,28 @@ export default {
               message: "添加成功",
               type: "success",
             });
-            this.onReset();
+            // this.queryDatas();
+            this.$router.push("/index/show");
           }
         });
        }
       })
      },
+//  queryDatas() {
+//       this.$http
+//         .post(
+//           "/food/querySome",
+//           this.$qs.stringify({
+//             pageNumber: this.pageNumber,
+//             pageSize: this.pageSize,
+//           })
+//         )
+//         .then((response) => {
+//           this.datas = response.data.data.rows;
+//           this.total = response.data.data.total;
+//         });
+//     },
+
     //重置
     onReset() {
       this.$refs["myForm"].resetFields();
